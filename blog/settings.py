@@ -41,8 +41,11 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "crispy_forms",
     "posts",
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -129,3 +132,5 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 AUTH_USER_MODEL = "posts.User"
+LOGIN_REDIRECT_URL = "/"
+
