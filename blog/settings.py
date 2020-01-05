@@ -25,7 +25,7 @@ SECRET_KEY = "l$tkv75lffm=x@v@$+ibpyk0iivoo#7pf57o!o^%jm!m_k^ze*"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "crispy_forms",
     "posts",
+    #    "newsapp",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "EST"
 
 USE_I18N = True
 
