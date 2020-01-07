@@ -26,6 +26,7 @@ SECRET_KEY = "l$tkv75lffm=x@v@$+ibpyk0iivoo#7pf57o!o^%jm!m_k^ze*"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = ['nyntofive.com','.nyntofive.com','165.227.80.79','localhost']
 
 
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     "crispy_forms",
     "posts",
     "news",
-
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
