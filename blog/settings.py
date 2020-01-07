@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +26,8 @@ SECRET_KEY = "l$tkv75lffm=x@v@$+ibpyk0iivoo#7pf57o!o^%jm!m_k^ze*"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
+ALLOWED_HOSTS = ['nyntofive.com','.nyntofive.com','165.227.80.79','localhost']
 
 
 # Application definition
@@ -43,13 +45,14 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "crispy_forms",
     "posts",
-    #    "newsapp",
+    "news",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -84,8 +87,12 @@ WSGI_APPLICATION = "blog.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": 'myblog',
+        "USER": 'nyn',
+        "PASSWORD": 'NyN2080ti',
+        "HOST": "localhost",
+        "PORT": '',
     }
 }
 
@@ -122,9 +129,12 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+
+STATICFILES_DIRS = ["static/","static_root/"]
 STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
@@ -133,5 +143,6 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 AUTH_USER_MODEL = "posts.User"
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL="/"
 
+SECURE_SSL_REDIRECT = False
