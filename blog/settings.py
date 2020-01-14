@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "l$tkv75lffm=x@v@$+ibpyk0iivoo#7pf57o!o^%jm!m_k^ze*"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["nyntofive.com", ".nyntofive.com","localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "crispy_forms",
     "posts",
-    #    "newsapp",
 ]
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"

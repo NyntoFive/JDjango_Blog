@@ -23,11 +23,13 @@
                 </div>
                 <hr>
                 <div class="text-left">
+                    {% if request.user.is_authenticated %}
                     <h4>Enoy this post? Click the 'Like' button!</h4>
                     <a class="text-muted" href="{{ object.get_like_url }}"><i
                             class="fas fa-thumbs-up fa-lg"></i>{{ object.get_like_count }}
                     </a>
                     <hr>
+                    {% endif %}
                     {% if request.user.is_authenticated %}
                     <h4>Leave a comment below</h4>
                     <form method="POST">
